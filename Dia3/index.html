@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camino del Programador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="game-card">
+        <div class="header">
+            <h1>Camino del Programador</h1>
+            <p class="subtitle">¿Qué ruta seguirás en tu carrera?</p>
+        </div>
+        <div class="start-section" id="startSection">
+            <button id="startButton" class="primary-button">Iniciar Aventura</button>
+            <button id="exitStartButton" class="primary-button" style="margin-left: 20px;">Salir</button>
+        </div>
+        <div id="gameArea" class="game-area">
+            <div id="output" class="output-area"></div>
+            <div id="pathVisualization" class="path-visualization">
+                <div class="path-node" id="nodeStart">Inicio</div>
+                <div class="path-arrow"></div>
+                <div class="path-node" id="nodeArea">Área</div>
+                <div class="path-arrow"></div>
+                <div class="path-node" id="nodeTech">Tecnología</div>
+                <div class="path-arrow"></div>
+                <div class="path-node" id="nodeCareer">Carrera</div>
+                <div class="path-arrow"></div>
+                <div class="path-node" id="nodeSkills">Habilidades</div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Desarrolla tu futuro un paso a la vez</p>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

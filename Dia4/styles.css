@@ -1,0 +1,204 @@
+/* Variables de colores */
+:root {
+    --primary-color: #7e57c2;
+    --secondary-color: #b085f5;
+    --background-color: #f8f5ff;
+    --card-color: #ffffff;
+    --text-color: #333333;
+    --success-color: #4caf50;
+    --error-color: #f44336;
+    --shadow: 0 4px 20px rgba(126, 87, 194, 0.2);
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    background-image: radial-gradient(circle, rgba(126, 87, 194, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--card-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 16px;
+}
+
+.game-area {
+    padding: 30px;
+}
+
+#range-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#user-guess {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: border-color 0.3s ease;
+}
+
+#user-guess:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.message-box {
+    background-color: rgba(126, 87, 194, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#message {
+    font-size: 18px;
+}
+
+.success {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.error {
+    color: var(--error-color);
+}
+
+.attempts-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.attempt {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.attempt.used {
+    background-color: var(--error-color);
+}
+
+.restart-container {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+.btn-restart {
+    background-color: var(--success-color);
+}
+
+.btn-restart:hover {
+    background-color: #66bb6a;
+}
+
+.btn-switch {
+    margin-top: 10px;
+    background-color: #ff9800;
+}
+
+.btn-switch:hover {
+    background-color: #ffb74d;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    border-radius: 50%;
+    pointer-events: none;
+}

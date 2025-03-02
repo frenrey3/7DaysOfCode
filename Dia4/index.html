@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <h1>Adivina el Número</h1>
+            <p>¿Serás capaz de descubrir el número secreto?</p>
+        </div>
+        <div class="game-area">
+            <p id="range-info">Estoy pensando en un número entre <strong>0</strong> y <strong>10</strong>.</p>
+            <p id="mode-indicator" style="text-align: center; margin-bottom: 15px; font-size: 14px; color: #666;">Modo: Número predefinido</p>
+
+            <div class="input-group">
+                <input type="number" id="user-guess" min="0" max="10" placeholder="Tu suposición..." autofocus>
+                <button id="guess-btn" class="btn">Adivinar</button>
+            </div>
+
+            <div class="message-box">
+                <p id="message">¡Tienes 3 intentos para adivinar!</p>
+            </div>
+
+            <div class="attempts-container">
+                <div class="attempt" id="attempt-1"></div>
+                <div class="attempt" id="attempt-2"></div>
+                <div class="attempt" id="attempt-3"></div>
+            </div>
+
+            <div class="restart-container">
+                <button id="restart-btn" class="btn btn-restart">Jugar de nuevo</button>
+                <button id="switch-mode-btn" class="btn btn-switch">Cambiar a número aleatorio</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

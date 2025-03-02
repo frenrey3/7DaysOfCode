@@ -11,6 +11,7 @@ const attemptElements = [
 const restartContainer = document.querySelector('.restart-container');
 const restartButton = document.getElementById('restart-btn');
 const switchModeButton = document.getElementById('switch-mode-btn');
+const exitButton = document.getElementById('exit-btn');
 
 // Variables del juego
 let numeroSecreto;
@@ -115,6 +116,21 @@ function cambiarModo() {
     iniciarJuego();
 }
 
+// Función para salir del juego
+function salirDelJuego() {
+    if (confirm("¿Estás seguro que deseas salir del juego?")) {
+        // Puedes agregar aquí alguna lógica adicional antes de salir
+        window.close(); // Intenta cerrar la ventana
+
+        // Como window.close() a menudo no funciona por restricciones del navegador,
+        // mostramos un mensaje alternativo
+        messageElement.textContent = "Para salir completamente, cierra esta pestaña del navegador.";
+        messageElement.className = "error";
+        userGuessInput.disabled = true;
+        guessButton.disabled = true;
+    }
+}
+
 // Función para crear efectos de confeti (solo si gana)
 function crearConfeti() {
     const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
@@ -161,6 +177,7 @@ userGuessInput.addEventListener('keypress', function(e) {
 });
 restartButton.addEventListener('click', iniciarJuego);
 switchModeButton.addEventListener('click', cambiarModo);
+exitButton.addEventListener('click', salirDelJuego);
 
 // Iniciar el juego al cargar la página
 window.addEventListener('load', iniciarJuego);

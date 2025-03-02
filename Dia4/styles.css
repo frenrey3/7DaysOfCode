@@ -7,6 +7,7 @@
     --text-color: #333333;
     --success-color: #4caf50;
     --error-color: #f44336;
+    --exit-color: #e53935;
     --shadow: 0 4px 20px rgba(126, 87, 194, 0.2);
 }
 
@@ -105,6 +106,10 @@ body {
     font-weight: 600;
     padding: 12px 20px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn:hover {
@@ -166,6 +171,22 @@ body {
     display: none;
 }
 
+.restart-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.restart-buttons .btn {
+    width: 48%;
+    height: 50px;
+    padding: 8px 10px;
+    line-height: 1.2;
+    white-space: normal;
+}
+
 .btn-restart {
     background-color: var(--success-color);
 }
@@ -175,12 +196,28 @@ body {
 }
 
 .btn-switch {
-    margin-top: 10px;
     background-color: #ff9800;
 }
 
 .btn-switch:hover {
     background-color: #ffb74d;
+}
+
+.exit-container {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-exit {
+    background-color: var(--exit-color);
+    width: 100%;
+    height: 50px;
+}
+
+.btn-exit:hover {
+    background-color: #f44336;
 }
 
 /* Animaciones */

@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    overflow-y: hidden; /* Prevent scrollbar */
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduced vertical padding */
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.exit-button {
+    background-color: #ff4757;
+    color: white;
+    padding: 8px 16px; /* Reduced padding */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.exit-button:hover {
+    background-color: #ff3546;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px; /* Reduced padding */
+}
+
+.calculator {
+    width: 320px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background-color: #222;
+    color: white;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+    background-color: #161616;
+    padding: 15px 25px; /* Reduced top/bottom padding */
+    text-align: right;
+    position: relative;
+    height: 120px; /* Reduced height */
+    border-bottom: 2px solid #333;
+}
+
+.display .previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    height: 24px;
+    overflow: hidden;
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+.display .current-operand {
+    font-size: 2.8rem;
+    font-weight: 300;
+    height: 65px; /* Reduced height */
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background-color: #444;
+    padding: 2px;
+}
+
+button {
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 1.5rem;
+    padding: 18px 0; /* Reduced padding */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: #2a2a2a;
+    font-weight: 500;
+}
+
+.equals {
+    background-color: #2575fc;
+    grid-column: span 2;
+    font-weight: 600;
+}
+
+.equals:hover {
+    background-color: #1a65dc;
+}
+
+.clear {
+    background-color: #ff4757;
+    font-weight: 600;
+}
+
+.clear:hover {
+    background-color: #ff3546;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 10px; /* Reduced margin */
+    padding: 5px; /* Reduced padding */
+    color: white;
+    opacity: 0.8;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.calculator {
+    animation: pulse 2s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.calculator:hover {
+    animation-play-state: running;
+}
+
+/* Height-based media queries */
+@media (max-height: 700px) {
+    .calculator {
+        transform: scale(0.95);
+        margin: -10px 0;
+    }
+
+    button {
+        padding: 16px 0;
+    }
+
+    .display {
+        height: 110px;
+    }
+}
+
+@media (max-height: 600px) {
+    .calculator {
+        transform: scale(0.9);
+        margin: -15px 0;
+    }
+
+    button {
+        padding: 14px 0;
+    }
+
+    .display {
+        height: 100px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        width: 300px;
+    }
+
+    button {
+        padding: 18px 0;
+    }
+
+    .nav-bar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .exit-button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}

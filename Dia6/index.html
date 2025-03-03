@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="app-top">
+            <div class="logo">🛒</div>
+            <button id="exit-btn" class="icon-btn" title="Salir a Google">
+                <span class="exit-icon">↗️</span>
+            </button>
+        </div>
+        <h1>Mi Lista de Compras</h1>
+        <p class="subtitle">Organiza tus compras de manera fácil y rápida</p>
+    </header>
+    <div class="card">
+        <h2>Añadir Producto</h2>
+        <div class="input-group">
+            <input type="text" id="item-input" placeholder="¿Qué necesitas comprar?" autofocus>
+            <button id="add-btn" class="btn">Añadir</button>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Mi Lista <span id="items-counter" class="counter">0</span></h2>
+        <ul id="shopping-list" class="shopping-list">
+            <!-- Aquí se añadirán los elementos dinámicamente -->
+        </ul>
+        <div id="empty-list" class="empty-list">
+            Tu lista de compras está vacía
+        </div>
+    </div>
+    <div class="actions">
+        <button id="clear-btn" class="btn btn-secondary">Limpiar todo</button>
+    </div>
+</div>
+<footer>
+    <p>7 Days of Code Challenge - Desarrollado por Enrique</p>
+</footer>
+<div id="notification" class="notification"></div>
+<script src="script.js"></script>
+</body>
+</html>

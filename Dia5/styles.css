@@ -1,0 +1,306 @@
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #388e3c;
+    --primary-light: #c8e6c9;
+    --secondary-color: #ff9800;
+    --text-color: #333;
+    --light-text: #757575;
+    --background-color: #f5f5f5;
+    --card-color: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --exit-color: #f44336;
+    --exit-hover: #d32f2f;
+
+    /* Category colors */
+    --frutas-color: #ff7043;
+    --verduras-color: #66bb6a;
+    --lacteos-color: #42a5f5;
+    --panaderia-color: #ffb74d;
+    --carnes-color: #ef5350;
+    --congelados-color: #29b6f6;
+    --bebidas-color: #7e57c2;
+    --limpieza-color: #26c6da;
+    --otros-color: #bdbdbd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 350px;
+    background-color: var(--card-color);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.app-header h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--background-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+input[type="text"], select {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-add {
+    background-color: var(--primary-color);
+    color: white;
+    flex: 2;
+}
+
+.btn-add:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-clear {
+    background-color: #f44336;
+    color: white;
+    flex: 1;
+}
+
+.btn-clear:hover {
+    background-color: #d32f2f;
+}
+
+.btn-print {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-print:hover {
+    background-color: #f57c00;
+}
+
+.btn-exit {
+    background-color: var(--exit-color);
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-exit:hover {
+    background-color: var(--exit-hover);
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Added this to make buttons display side by side */
+.list-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.shopping-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background: var(--card-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: white;
+}
+
+.category-header i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.category-items {
+    padding: 15px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-check {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.item-text {
+    flex: 1;
+    font-size: 16px;
+}
+
+.item-remove {
+    background: none;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.item-checked .item-text {
+    text-decoration: line-through;
+    color: var(--light-text);
+}
+
+.summary-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.summary-section h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.category-summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+/* Category specific styles */
+.category-frutas .category-header { background-color: var(--frutas-color); }
+.category-verduras .category-header { background-color: var(--verduras-color); }
+.category-lacteos .category-header { background-color: var(--lacteos-color); }
+.category-panaderia .category-header { background-color: var(--panaderia-color); }
+.category-carnes .category-header { background-color: var(--carnes-color); }
+.category-congelados .category-header { background-color: var(--congelados-color); }
+.category-bebidas .category-header { background-color: var(--bebidas-color); }
+.category-limpieza .category-header { background-color: var(--limpieza-color); }
+.category-otros .category-header { background-color: var(--otros-color); }
+
+.empty-list {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background: var(--card-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media print {
+    .sidebar, .list-actions {
+        display: none;
+    }
+
+    .app-container {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 0;
+    }
+
+    .category-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+}

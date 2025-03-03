@@ -15,10 +15,11 @@
         </div>
         <div class="game-area">
             <p id="range-info">Estoy pensando en un número entre <strong>0</strong> y <strong>10</strong>.</p>
-            <p id="mode-indicator" style="text-align: center; margin-bottom: 15px; font-size: 14px; color: #666;">Modo: Número predefinido</p>
+
+            <p id="mode-indicator">Modo: Número predefinido</p>
 
             <div class="input-group">
-                <input type="number" id="user-guess" min="0" max="10" placeholder="Tu suposición..." autofocus>
+                <label for="user-guess"></label><input type="number" id="user-guess" min="0" max="10" placeholder="Tu suposición..." autofocus>
                 <button id="guess-btn" class="btn">Adivinar</button>
             </div>
 

@@ -76,6 +76,20 @@ body {
     color: var(--primary-color);
 }
 
+#mode-indicator {
+    width: calc(100% - 104px); /* Match input width (accounting for button width + gap) */
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 480px) {
+    #mode-indicator {
+        width: calc(100% - 94px);
+    }
+}
+
 .input-group {
     display: flex;
     gap: 10px;

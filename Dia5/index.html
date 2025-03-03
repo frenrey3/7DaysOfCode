@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras por Categorías</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="app-container">
+    <div class="sidebar">
+        <div class="app-header">
+            <h1><i class="fas fa-shopping-basket"></i> Mi Lista de Compras</h1>
+        </div>
+        <form id="shopping-list-form">
+            <input type="text" id="item" placeholder="Nuevo artículo" required>
+            <select id="category">
+                <option value="frutas"><i class="fas fa-apple-alt"></i> Frutas</option>
+                <option value="verduras"><i class="fas fa-carrot"></i> Verduras</option>
+                <option value="lacteos"><i class="fas fa-cheese"></i> Lácteos</option>
+                <option value="panaderia"><i class="fas fa-bread-slice"></i> Panadería</option>
+                <option value="carnes"><i class="fas fa-drumstick-bite"></i> Carnes</option>
+                <option value="congelados"><i class="fas fa-snowflake"></i> Congelados</option>
+                <option value="bebidas"><i class="fas fa-wine-bottle"></i> Bebidas</option>
+                <option value="limpieza"><i class="fas fa-broom"></i> Limpieza</option>
+                <option value="otros"><i class="fas fa-shopping-bag"></i> Otros</option>
+            </select>
+            <div class="form-buttons">
+                <button type="submit" class="btn-add"><i class="fas fa-plus"></i> Agregar</button>
+                <button type="button" id="btn-clear" class="btn-clear"><i class="fas fa-trash"></i> Limpiar Todo</button>
+            </div>
+        </form>
+        <div class="summary-section">
+            <h3>Resumen</h3>
+            <div id="categories-summary"></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="list-header">
+            <h2>Artículos por Categoría</h2>
+            <div class="list-actions">
+                <button id="print-list" class="btn-print"><i class="fas fa-print"></i> Imprimir</button>
+                <button id="exit-button" class="btn-exit"><i class="fas fa-sign-out-alt"></i> Salir</button>
+            </div>
+        </div>
+        <div id="shopping-list" class="shopping-list-container"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
